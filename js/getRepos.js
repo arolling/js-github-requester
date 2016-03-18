@@ -2,10 +2,9 @@ var apiKey = require("./../.env").apiKey;
 var moment = require("moment");
 
 exports.getRepos = function(userName, page){
-  if(page === 1) {
-    var query = 'https://api.github.com/users/' + userName + '/repos?per_page=30&sort=updated&access_token=' + apiKey + '&callback=?';
-  } else {
-    var query = page;
+  var query = 'https://api.github.com/users/' + userName + '/repos?per_page=10&sort=updated&access_token=' + apiKey + '&callback=?';
+  if(page !== 1) {
+    query += page;
   }
 
   console.log(query);
@@ -14,12 +13,13 @@ exports.getRepos = function(userName, page){
     var linkData = response.meta.Link; //array of up to 4
     for (var i = 0 ; i < linkData.length ; i++){
       if(linkData[i][1].rel === "next"){
-        var start = linkData[i][0].indexOf("jQuery");
-        var junk = linkData[i][0].substr(start, 57);
-        var newLink = linkData[i][0].replace(junk, '?&');
-        $('#forwardButton').attr("value", newLink);
+        var find = linkData[i][0].indexOf("&page");
+        var link = linkData[i][0].slice(find);
+        $('#forwardButton').attr("value", link );
       } else if (linkData[i][1].rel === "prev"){
-        $('#backButton').attr("value", linkData[i][0]);
+        var find = linkData[i][0].indexOf("&page");
+        var link = linkData[i][0].slice(find);
+        $('#backButton').attr("value", link);
       }
     }
     // $("#pageLink").text(response.meta.Link[0][0]);

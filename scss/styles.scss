@@ -20,8 +20,30 @@ $offwhite : #F7F9F9;
   }
 }
 
+html {
+  position: relative;
+  //min-height: 100%;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
 body {
   background-color: $offwhite;
+  margin-bottom: 150px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+  margin-top: 40px;
+  background-color: $turquoise;
 }
 
 .panel {
@@ -32,8 +54,39 @@ body {
     background-color: $seafoam;
     color: $vibrantpurple;
   }
+
+  .panel-body {
+    background-color: $softgreen;
+  }
+  .list-group-item {
+    background-color: $offwhite;
+  }
 }
+
+
 
 .hideme {
   display:none;
+}
+
+.pager {
+  margin-left: 20%;
+  margin-right: 20%;
+  li {
+
+    a {
+      background-color: $vibrantpurple;
+      color: $softgreen;
+      border: none;
+    }
+    a:hover {
+      background-color: $turquoise;
+      color: $offwhite;
+    }
+
+    a:focus {
+      background-color: $seafoam;
+      color: $vibrantpurple;
+    }
+  }
 }

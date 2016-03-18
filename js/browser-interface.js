@@ -21,6 +21,7 @@ $(document).ready(function(){
     var value = $(this).attr("value");
     console.log(value);
     $(this).attr("value", "");
+    $('#userRepos').empty();
     getRepos(userName, value);
   });
 
