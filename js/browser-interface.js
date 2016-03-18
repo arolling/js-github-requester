@@ -5,7 +5,10 @@ $(document).ready(function(){
     e.preventDefault();
     var userName = $('#gitName').val();
     $('#gitName').val('');
+    $("#userInfo").empty();
+    $('#userRepos').empty();
     getRepos(userName);
+    $(".hideme").show();
   });
 
 
