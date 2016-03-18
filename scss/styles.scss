@@ -1,0 +1,33 @@
+$softgreen : #BED8D4;
+$vibrantpurple : #820263;
+$turquoise : #00A6A6;
+$seafoam : #78D5D7;
+$offwhite : #F7F9F9;
+
+.jumbotron {
+  background-color: $softgreen;
+  text-align: center;
+  h1 {
+    color: $vibrantpurple;
+  }
+  .btn-default {
+    background-color: $turquoise;
+    border-color: $vibrantpurple;
+  }
+  .form-control {
+    background-color: $offwhite;
+    border-color: $seafoam;
+  }
+}
+
+body {
+  background-color: $offwhite;
+}
+
+.panel {
+  width: 70%;
+  .panel-heading {
+    background-color: $seafoam;
+    color: $offwhite;
+  }
+}
