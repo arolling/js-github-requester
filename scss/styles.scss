@@ -25,9 +25,15 @@ body {
 }
 
 .panel {
-  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
+
   .panel-heading {
     background-color: $seafoam;
-    color: $offwhite;
+    color: $vibrantpurple;
   }
+}
+
+.hideme {
+  display:none;
 }
